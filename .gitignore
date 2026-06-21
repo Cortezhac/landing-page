@@ -22,3 +22,11 @@ pnpm-debug.log*
 
 # jetbrains setting folder
 .idea/
+
+# agent instructions
+AGENTS.md
+
+# Design Tokens
+DESING_DARK.md
+DESING_LIGHT.md
+

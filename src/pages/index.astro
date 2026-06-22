@@ -1,5 +1,18 @@
 ---
-// Redirect root (/) to the default locale (Spanish)
-// Astro generates a static HTML page with meta refresh in static mode.
-return Astro.redirect('/es/', 301);
+// Redirect root (/) to the default locale (Spanish).
+// Inline script runs before the browser paints — zero flicker.
 ---
+
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <!-- SEO fallback: meta refresh for crawlers that don't execute JS -->
+    <meta http-equiv="refresh" content="0;url=/es/" />
+    <!-- Instant redirect: JS runs synchronously, zero flicker for real users -->
+    <script is:inline>
+      window.location.replace('/es/');
+    </script>
+  </head>
+  <body></body>
+</html>

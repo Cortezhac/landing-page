@@ -1,0 +1,30 @@
+---
+import type { GetStaticPathsResult } from 'astro';
+import Layout from '../../layouts/Layout.astro';
+import TopNavBar from '../../components/TopNavBar.astro';
+import HeroSection from '../../components/HeroSection.astro';
+import MarqueeSection from '../../components/MarqueeSection.astro';
+import Footer from '../../components/Footer.astro';
+import { getTranslations, type Lang } from '../../i18n/translations';
+
+export function getStaticPaths(): GetStaticPathsResult {
+  return [
+    { params: { lang: 'es' } },
+    { params: { lang: 'en' } },
+  ];
+}
+
+const { lang } = Astro.params as { lang: Lang };
+const t = getTranslations(lang);
+---
+
+<Layout lang={lang} title={t.layout.title}>
+  <TopNavBar nav={t.nav} />
+
+  <main class="pt-24 pb-section-padding">
+    <HeroSection hero={t.hero} />
+    <MarqueeSection items={t.marquee} />
+  </main>
+
+  <Footer footer={t.footer} />
+</Layout>

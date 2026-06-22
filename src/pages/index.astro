@@ -1,18 +1,5 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import TopNavBar from '../components/TopNavBar.astro';
-import HeroSection from '../components/HeroSection.astro';
-import MarqueeSection from '../components/MarqueeSection.astro';
-import Footer from '../components/Footer.astro';
+// Redirect root (/) to the default locale (Spanish)
+// Astro generates a static HTML page with meta refresh in static mode.
+return Astro.redirect('/es/', 301);
 ---
-
-<Layout>
-  <TopNavBar />
-
-  <main class="pt-24 pb-section-padding">
-    <HeroSection />
-    <MarqueeSection />
-  </main>
-
-  <Footer />
-</Layout>

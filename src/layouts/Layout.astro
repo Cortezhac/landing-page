@@ -1,58 +1,59 @@
 ---
-import "../styles/global.css";
+import '../styles/global.css';
+
+export interface Props {
+  lang?: string;
+  title?: string;
+}
+
+const { lang = 'es', title = 'Irvin Cortez | Backend Developer' } = Astro.props as Props;
 ---
 
 <!doctype html>
-<html lang="es">
-  <head>
-    <meta charset="UTF-8" />
-    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
-    <title>Irvin Cortez | Backend Developer</title>
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <link rel="icon" href="/favicon.ico" />
-    <meta name="generator" content={Astro.generator} />
+<html lang={lang}>
+<head>
+  <meta charset="UTF-8" />
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+  <title>{title}</title>
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="icon" href="/favicon.ico" />
+  <meta name="generator" content={Astro.generator} />
 
-    <!-- Google Fonts: Geist + JetBrains Mono -->
-    <link
-      href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Geist:wght@400;600;700&display=swap"
-      rel="stylesheet"
-    />
-    <!-- Material Symbols -->
-    <link
-      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
-      rel="stylesheet"
-    />
+  <!-- Google Fonts: Geist + JetBrains Mono -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&amp;family=Geist:wght@400;600;700&amp;display=swap"
+    rel="stylesheet"
+  />
+  <!-- Material Symbols -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+    rel="stylesheet"
+  />
 
-    <style>
-      /* Ensure full-height layout */
-      html,
-      body {
-        margin: 0;
-        width: 100%;
-        min-height: 100%;
+  <style>
+    /* Ensure full-height layout */
+    html, body {
+      margin: 0;
+      width: 100%;
+      min-height: 100%;
+    }
+  </style>
+
+  <!-- Flash-prevention: set theme class before render -->
+  <script is:inline>
+    (function() {
+      var theme = localStorage.getItem('theme');
+      if (theme === 'dark' || (!theme && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+        document.documentElement.classList.add('dark');
+        document.documentElement.style.colorScheme = 'dark';
+      } else {
+        document.documentElement.classList.remove('dark');
+        document.documentElement.style.colorScheme = 'light';
       }
-    </style>
-
-    <!-- Flash-prevention: set theme class before render -->
-    <script is:inline>
-      (function () {
-        var theme = localStorage.getItem("theme");
-        if (
-          theme === "dark" ||
-          (!theme && window.matchMedia("(prefers-color-scheme: dark)").matches)
-        ) {
-          document.documentElement.classList.add("dark");
-          document.documentElement.style.colorScheme = "dark";
-        } else {
-          document.documentElement.classList.remove("dark");
-          document.documentElement.style.colorScheme = "light";
-        }
-      })();
-    </script>
-  </head>
-  <body
-    class="bg-background text-on-surface min-h-screen selection:bg-primary-container selection:text-on-primary-container"
-  >
-    <slot />
-  </body>
+    })();
+  </script>
+</head>
+<body class="bg-background text-on-surface min-h-screen selection:bg-primary-container selection:text-on-primary-container">
+  <slot />
+</body>
 </html>

@@ -1,5 +1,11 @@
 ---
-// No props needed for now — links are static
+import type { NavTrans } from '../i18n/translations';
+
+export interface Props {
+  nav: NavTrans;
+}
+
+const { nav } = Astro.props as Props;
 ---
 
 <nav class="fixed top-0 w-full bg-surface/80 backdrop-blur-md border-b border-outline-variant/30 z-50">
@@ -9,10 +15,10 @@
 
     <!-- Desktop nav links -->
     <div class="hidden md:flex items-center gap-stack-lg">
-      <a href="#" class="text-primary font-semibold border-b-2 border-primary pb-1 font-body-md text-body-md">About</a>
-      <a href="#" class="text-on-surface-variant hover:text-primary transition-colors font-body-md text-body-md">Skills</a>
-      <a href="#" class="text-on-surface-variant hover:text-primary transition-colors font-body-md text-body-md">Projects</a>
-      <a href="#" class="text-on-surface-variant hover:text-primary transition-colors font-body-md text-body-md">Contact</a>
+      <a href="#" class="text-primary font-semibold border-b-2 border-primary pb-1 font-body-md text-body-md">{nav.about}</a>
+      <a href="#" class="text-on-surface-variant hover:text-primary transition-colors font-body-md text-body-md">{nav.skills}</a>
+      <a href="#" class="text-on-surface-variant hover:text-primary transition-colors font-body-md text-body-md">{nav.projects}</a>
+      <a href="#" class="text-on-surface-variant hover:text-primary transition-colors font-body-md text-body-md">{nav.contact}</a>
     </div>
 
     <!-- Theme toggle -->

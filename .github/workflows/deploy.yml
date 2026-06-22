@@ -1,0 +1,39 @@
+name: Deploy to Hetzner VPS
+
+on:
+  push:
+    branches:
+      - main  # Se ejecutará cada vez que hagas push a la rama main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout del código
+        uses: actions/checkout@v4
+
+      - name: Desplegar en el servidor vía SSH
+        uses: appleboy/ssh-action@v1.0.3
+        with:
+          host: ${{ secrets.SSH_HOST }}
+          username: ${{ secrets.SSH_USER }}
+          key: ${{ secrets.SSH_KEY }}
+          script: |
+            # 1. Definir la ruta del proyecto (ejemplo)
+            PROJECT_DIR="/opt/docker/apps/${{ github.event.repository.name }}"
+            
+            # 2. Si la carpeta no existe, clonar por primera vez; si existe, actualizar
+            if [ ! -d "$PROJECT_DIR" ]; then
+              mkdir -p "$PROJECT_DIR"
+              git clone https://github.com/${{ github.repository }}.git "$PROJECT_DIR"
+              cd "$PROJECT_DIR"
+            else
+              cd "$PROJECT_DIR"
+              git reset --hard HEAD
+              git pull origin main
+            fi
+            
+            # 3. Levantar/recompilar los contenedores del proyecto
+            # (Asume que tu proyecto tiene su propio docker-compose.yml)
+            docker compose up -d --build

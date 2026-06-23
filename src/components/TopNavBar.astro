@@ -43,12 +43,3 @@ const targetLabel = targetLang.toUpperCase();
   </div>
 </nav>
 
-<script>
-  const toggle = document.getElementById('theme-toggle');
-
-  toggle.addEventListener('click', () => {
-    const isDark = document.documentElement.classList.toggle('dark');
-    document.documentElement.style.colorScheme = isDark ? 'dark' : 'light';
-    localStorage.setItem('theme', isDark ? 'dark' : 'light');
-  });
-</script>

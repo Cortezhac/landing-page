@@ -1,4 +1,5 @@
 ---
+import { ClientRouter } from 'astro:transitions';
 import '../styles/global.css';
 
 export interface Props {
@@ -18,18 +19,13 @@ const { lang = 'es', title = 'Irvin Cortez | Backend Developer' } = Astro.props 
   <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
   <link rel="icon" href="/favicon.ico" />
   <meta name="generator" content={Astro.generator} />
+  <ClientRouter />
 
   <!-- Google Fonts: Geist + JetBrains Mono -->
   <link
     href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&amp;family=Geist:wght@400;600;700&amp;display=swap"
     rel="stylesheet"
   />
-  <!-- Material Symbols -->
-  <link
-    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
-    rel="stylesheet"
-  />
-
   <style>
     /* Ensure full-height layout */
     html, body {

@@ -1,0 +1,43 @@
+---
+import {
+  ArrowRight,
+  BadgeCheck,
+  Bike,
+  Bot,
+  Cloud,
+  Code,
+  Copy,
+  Database,
+  Languages,
+  Moon,
+  Sun,
+  Terminal,
+} from '@lucide/astro';
+
+export interface Props {
+  name: string;
+  size?: number;
+  class?: string;
+}
+
+const { name, size = 24, class: className = '' } = Astro.props;
+
+const iconMap: Record<string, any> = {
+  'arrow-right': ArrowRight,
+  'badge-check': BadgeCheck,
+  bike: Bike,
+  bot: Bot,
+  cloud: Cloud,
+  code: Code,
+  copy: Copy,
+  database: Database,
+  languages: Languages,
+  moon: Moon,
+  sun: Sun,
+  terminal: Terminal,
+};
+
+const LucideIcon = iconMap[name];
+---
+
+{LucideIcon && <LucideIcon size={size} class={className} />}

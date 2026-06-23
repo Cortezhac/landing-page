@@ -59,10 +59,10 @@ export const translations: Record<Lang, Translations> = {
         'Construyendo aplicaciones robustas con Laravel, Livewire y Filament. Apasionado por el testing, los flujos de trabajo con agentes de IA y el ciclismo.',
       backgroundTitle: 'TRAYECTORIA',
       backgroundText:
-        'Técnico en Desarrollo de Software especializado en backend. Experto en SQL (PostgreSQL, MariaDB, SQL Server) y versátil con experiencia en C# .NET.',
+        'Técnico en Desarrollo de Software especializado en backend con Laravel, C# .NET y SQL (PostgreSQL, MariaDB, SQL Server). Experiencia en múltiples proyectos desarrollando funcionalidades e integraciones, enfocado en calidad, rendimiento y entrega de valor.',
       adaptabilityTitle: 'ADAPTABILIDAD',
       adaptabilityText:
-        'Enfocado en el aprendizaje continuo. Mejorando activamente mi inglés hacia B1 para integración global en equipos remotos.',
+        'Desarrollador backend comprometido con el aprendizaje continuo y la visión integral del desarrollo. Exploro infraestructura, despliegue y automatización para construir soluciones más sólidas.',
       ctaProjects: 'Ver Proyectos',
       ctaContact: 'Contactar',
       techStack: 'Stack Tecnológico y Herramientas',
@@ -72,8 +72,8 @@ export const translations: Record<Lang, Translations> = {
       cyclingBadge: 'APASIONADO DEL CICLISMO',
     },
     marquee: [
-      { icon: 'verified', label: 'TDD FIRST' },
-      { icon: 'smart_toy', label: 'FLUJOS CON IA' },
+      { icon: 'badge-check', label: 'CONSTRUYO CON PRUEBAS' },
+      { icon: 'bot', label: 'FLUJOS CON IA' },
       { icon: 'cloud', label: 'ESPECIALISTA REMOTO' },
       { icon: 'code', label: 'ARQUITECTURA LIMPIA' },
     ],
@@ -98,10 +98,10 @@ export const translations: Record<Lang, Translations> = {
         'Building robust applications with Laravel, Livewire and Filament. Passionate about testing, AI agent workflows, and cycling.',
       backgroundTitle: 'BACKGROUND',
       backgroundText:
-        'Software Development Technician specialized in backend. Expert in SQL (PostgreSQL, MariaDB, SQL Server) and versatile with experience in C# .NET.',
+        'Software Development Technician specialized in backend with Laravel, C# .NET and SQL (PostgreSQL, MariaDB, SQL Server). Experienced building features and integrations across multiple projects, focused on code quality, performance, and value delivery.',
       adaptabilityTitle: 'ADAPTABILITY',
       adaptabilityText:
-        'Focused on continuous learning. Actively improving my English toward B1 for seamless global team integration.',
+        'Backend developer committed to continuous learning and a holistic view of development. I explore infrastructure, deployment, and automation to build more robust solutions.',
       ctaProjects: 'View Projects',
       ctaContact: 'Get in Touch',
       techStack: 'Tech Stack & Tools',
@@ -111,13 +111,13 @@ export const translations: Record<Lang, Translations> = {
       cyclingBadge: 'CYCLING ENTHUSIAST',
     },
     marquee: [
-      { icon: 'verified', label: 'TDD FIRST' },
-      { icon: 'smart_toy', label: 'AI DRIVEN WORKFLOWS' },
+      { icon: 'badge-check', label: 'BUILD WITH TEST' },
+      { icon: 'bot', label: 'AI DRIVEN WORKFLOWS' },
       { icon: 'cloud', label: 'REMOTE SPECIALIST' },
       { icon: 'code', label: 'CLEAN ARCHITECTURE' },
     ],
     footer: {
-      copyright: '© 2024 Irvin. Built with Laravel & Tailwind.',
+      copyright: '© 2024 Irvin. Built with Astro & Tailwind.',
       links: ['GitHub', 'LinkedIn', 'Source Code'],
     },
   },

@@ -78,7 +78,7 @@ export const translations: Record<Lang, Translations> = {
       { icon: 'code', label: 'ARQUITECTURA LIMPIA' },
     ],
     footer: {
-      copyright: '© 2024 Irvin. Hecho con Laravel y Tailwind.',
+      copyright: 'Irvin. Hecho con Astro y Tailwind.',
       links: ['GitHub', 'LinkedIn', 'Código Fuente'],
     },
   },
@@ -117,7 +117,7 @@ export const translations: Record<Lang, Translations> = {
       { icon: 'code', label: 'CLEAN ARCHITECTURE' },
     ],
     footer: {
-      copyright: '© 2024 Irvin. Built with Astro & Tailwind.',
+      copyright: 'Irvin. Built with Astro & Tailwind.',
       links: ['GitHub', 'LinkedIn', 'Source Code'],
     },
   },
